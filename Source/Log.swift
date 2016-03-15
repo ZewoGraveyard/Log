@@ -22,9 +22,9 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-@_exported import File
+@_exported import Stream
 
-public final class Log {
+public struct Log {
     public struct Level: OptionSetType {
         public let rawValue: Int32
 
@@ -41,33 +41,26 @@ public final class Log {
         public static let All     = Level(rawValue: ~0)
     }
 
-    public var stream: File
-    public var levels: Level
-    private let messageChannel = Channel<String>()
-    private let once = Once()
+    let stream: StreamType
+    let levels: Level
 
-    public init(stream: File = standardErrorStream, levels: Level = .All) {
+    public init(stream: StreamType, levels: Level = .All) {
         self.stream = stream
         self.levels = levels
     }
 
-    deinit {
-        messageChannel.close()
-    }
-
     public func log(level: Level, item: Any, terminator: String = "\n", flush: Bool = true) {
         if levels.contains(level) {
-            once.runInBackground {
-                for message in self.messageChannel {
-                    do {
-                        try self.stream.write(message)
-                    } catch {
-                        print("Log error: \(error)")
-                        print("Log message: \(message)")
-                    }
+            let message = "\(item)\(terminator)"
+            do {
+                try stream.send(Data(message))
+                if flush {
+                    try stream.flush()
                 }
+            } catch {
+                print("Log error: \(error)")
+                print("Log message: \(message)")
             }
-            messageChannel.send(String(item) + terminator)
         }
     }
 
