@@ -25,7 +25,7 @@
 @_exported import Stream
 
 public struct Log {
-    public struct Level: OptionSetType {
+    public struct Level: OptionSet {
         public let rawValue: Int32
 
         public init(rawValue: Int32) {
