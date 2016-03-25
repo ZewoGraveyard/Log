@@ -22,7 +22,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-@_exported import Stream
+@_exported import Data
 
 public struct Log {
     public struct Level: OptionSet {
@@ -41,10 +41,10 @@ public struct Log {
         public static let All     = Level(rawValue: ~0)
     }
 
-    let stream: StreamType
+    let stream: Stream
     let levels: Level
 
-    public init(stream: StreamType, levels: Level = .All) {
+    public init(stream: Stream, levels: Level = .All) {
         self.stream = stream
         self.levels = levels
     }
@@ -53,7 +53,7 @@ public struct Log {
         if levels.contains(level) {
             let message = "\(item)\(terminator)"
             do {
-                try stream.send(Data(message))
+                try stream.send(message.data)
                 if flush {
                     try stream.flush()
                 }
