@@ -32,19 +32,19 @@ public struct Log {
             self.rawValue = rawValue
         }
 
-        public static let Trace   = Level(rawValue: 1 << 0)
-        public static let Debug   = Level(rawValue: 1 << 1)
-        public static let Info    = Level(rawValue: 1 << 2)
-        public static let Warning = Level(rawValue: 1 << 3)
-        public static let Error   = Level(rawValue: 1 << 4)
-        public static let Fatal   = Level(rawValue: 1 << 5)
-        public static let All     = Level(rawValue: ~0)
+        public static let trace   = Level(rawValue: 1 << 0)
+        public static let debug   = Level(rawValue: 1 << 1)
+        public static let info    = Level(rawValue: 1 << 2)
+        public static let warning = Level(rawValue: 1 << 3)
+        public static let error   = Level(rawValue: 1 << 4)
+        public static let fatal   = Level(rawValue: 1 << 5)
+        public static let all     = Level(rawValue: ~0)
     }
 
     let stream: Stream
     let levels: Level
 
-    public init(stream: Stream, levels: Level = .All) {
+    public init(stream: Stream, levels: Level = .all) {
         self.stream = stream
         self.levels = levels
     }
@@ -65,26 +65,26 @@ public struct Log {
     }
 
     public func trace(item: Any, terminator: String = "\n", flush: Bool = true) {
-        log(.Trace, item: item, terminator: terminator, flush: flush)
+        log(.trace, item: item, terminator: terminator, flush: flush)
     }
 
     public func debug(item: Any, terminator: String = "\n", flush: Bool = true) {
-        log(.Debug, item: item, terminator: terminator, flush: flush)
+        log(.debug, item: item, terminator: terminator, flush: flush)
     }
 
     public func info(item: Any, terminator: String = "\n", flush: Bool = true) {
-        log(.Info, item: item, terminator: terminator, flush: flush)
+        log(.info, item: item, terminator: terminator, flush: flush)
     }
 
     public func warning(item: Any, terminator: String = "\n", flush: Bool = true) {
-        log(.Warning, item: item, terminator: terminator, flush: flush)
+        log(.warning, item: item, terminator: terminator, flush: flush)
     }
 
     public func error(item: Any, terminator: String = "\n", flush: Bool = true) {
-        log(.Error, item: item, terminator: terminator, flush: flush)
+        log(.error, item: item, terminator: terminator, flush: flush)
     }
 
     public func fatal(item: Any, terminator: String = "\n", flush: Bool = true) {
-        log(.Fatal, item: item, terminator: terminator, flush: flush)
+        log(.fatal, item: item, terminator: terminator, flush: flush)
     }
 }
