@@ -5,17 +5,8 @@ public struct LocationInfo {
     //    #column        Int      The column number in which it begins.
     //    #function      String   The name of the declaration in which it appears.
     //    #dsohandle     String   The dso handle.
-    public var file : String
-    public var line : Int
-    public var column : Int
-    public var function : String
-
-    init (file: String, line: Int, column: Int, function: String) {
-
-        self.file = file
-        self.line = line
-        self.column = column
-        self.function = function
-
-    }
+    public let file : String
+    public let line : Int
+    public let column : Int
+    public let function : String
 }
