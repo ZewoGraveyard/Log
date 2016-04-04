@@ -1,14 +1,14 @@
-public class LoggingEvent {
+public struct LoggingEvent {
 
-    public var locationInfo : LocationInfo
-    public var timestamp : Int64
-    public var level : Log.Level
-    public var name : String
-    public var logger : Logger
+    public let locationInfo : LocationInfo
+    public let timestamp : Int
+    public let level : Log.Level
+    public let name : String
+    public let logger : Logger
     public var message : Any?
     public var error : ErrorProtocol?
 
-    init (locationInfo : LocationInfo, timestamp: Int64, level: Log.Level, name: String, logger: Logger, message: Any?, error: ErrorProtocol?) {
+    init (locationInfo : LocationInfo, timestamp: Int, level: Log.Level, name: String, logger: Logger, message: Any?, error: ErrorProtocol?) {
 
         self.locationInfo = locationInfo
         self.timestamp = timestamp
