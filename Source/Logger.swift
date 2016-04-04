@@ -8,8 +8,8 @@ public class Logger {
     //    #dsohandle     String   The dso handle.
 
     var appenders = [Appender]()
-    var levels : Log.Level
-    var name : String
+    var levels: Log.Level
+    var name: String
 
     public init(name: String, appender: Appender, levels: Log.Level = .all) {
         appenders.append(appender)
