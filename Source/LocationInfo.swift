@@ -5,17 +5,17 @@ public class LocationInfo {
     //    #column        Int      The column number in which it begins.
     //    #function      String   The name of the declaration in which it appears.
     //    #dsohandle     String   The dso handle.
-    var file : String?
-    var line : Int?
-    var column : Int?
-    var function : String?
-    
+    public var file : String?
+    public var line : Int?
+    public var column : Int?
+    public var function : String?
+
     init (file: String? = nil, line: Int? = nil, column: Int? = nil, function: String? = nil) {
-        
+
         self.file = file
         self.line = line
         self.column = column
         self.function = function
-        
+
     }
 }
