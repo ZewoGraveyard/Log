@@ -9,6 +9,7 @@ Log
 ## Status
 
 - [x] Appenders
+- [ ] getLogger(named: String)
 - [ ] Filters
 
 ## Usage
