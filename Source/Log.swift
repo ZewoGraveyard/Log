@@ -53,9 +53,9 @@ public struct Log {
         if levels.contains(level) {
             let message = "\(item)\(terminator)"
             do {
-                try stream.send(message.data)
+                try stream.send(message.data, timingOut: -1)
                 if flush {
-                    try stream.flush()
+                    try stream.flush(timingOut: -1)
                 }
             } catch {
                 print("Log error: \(error)")
