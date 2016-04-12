@@ -22,7 +22,8 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-@_exported import Data
+@_exported import C7
+@_exported import OperatingSystem
 
 public struct Log {
     public struct Level: OptionSet {
