@@ -62,27 +62,27 @@ public class Logger {
         }
     }
 
-    public func trace(item: Any?, error: ErrorProtocol? = nil, file: String = #file, function: String = #function, line: Int = #line, column: Int = #column) {
+    public func trace(_ item: Any?, error: ErrorProtocol? = nil, file: String = #file, function: String = #function, line: Int = #line, column: Int = #column) {
         log(level: .trace, item: item, error: error, file: file, function: function, line: line, column: column)
     }
 
-    public func debug(item: Any?, error: ErrorProtocol? = nil, file: String = #file, function: String = #function, line: Int = #line, column: Int = #column) {
+    public func debug(_ item: Any?, error: ErrorProtocol? = nil, file: String = #file, function: String = #function, line: Int = #line, column: Int = #column) {
         log(level: .debug, item: item, error: error, file: file, function: function, line: line, column: column)
     }
 
-    public func info(item: Any?, error: ErrorProtocol? = nil, file: String = #file, function: String = #function, line: Int = #line, column: Int = #column) {
+    public func info(_ item: Any?, error: ErrorProtocol? = nil, file: String = #file, function: String = #function, line: Int = #line, column: Int = #column) {
         log(level: .info, item: item, error: error, file: file, function: function, line: line, column: column)
     }
 
-    public func warning(item: Any?, error: ErrorProtocol? = nil, file: String = #file, function: String = #function, line: Int = #line, column: Int = #column) {
+    public func warning(_ item: Any?, error: ErrorProtocol? = nil, file: String = #file, function: String = #function, line: Int = #line, column: Int = #column) {
         log(level: .warning, item: item, error: error, file: file, function: function, line: line, column: column)
     }
 
-    public func error(item: Any?, error: ErrorProtocol? = nil, file: String = #file, function: String = #function, line: Int = #line, column: Int = #column) {
+    public func error(_ item: Any?, error: ErrorProtocol? = nil, file: String = #file, function: String = #function, line: Int = #line, column: Int = #column) {
         log(level: .error, item: item, error: error, file: file, function: function, line: line, column: column)
     }
 
-    public func fatal(item: Any?, error: ErrorProtocol? = nil, file: String = #file, function: String = #function, line: Int = #line, column: Int = #column) {
+    public func fatal(_ item: Any?, error: ErrorProtocol? = nil, file: String = #file, function: String = #function, line: Int = #line, column: Int = #column) {
         log(level: .fatal, item: item, error: error, file: file, function: function, line: line, column: column)
     }
 

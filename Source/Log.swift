@@ -65,27 +65,27 @@ public struct Log {
         }
     }
 
-    public func trace(item: Any, terminator: String = "\n", flush: Bool = true) {
+    public func trace(_ item: Any, terminator: String = "\n", flush: Bool = true) {
         log(level: .trace, item: item, terminator: terminator, flush: flush)
     }
 
-    public func debug(item: Any, terminator: String = "\n", flush: Bool = true) {
+    public func debug(_ item: Any, terminator: String = "\n", flush: Bool = true) {
         log(level: .debug, item: item, terminator: terminator, flush: flush)
     }
 
-    public func info(item: Any, terminator: String = "\n", flush: Bool = true) {
+    public func info(_ item: Any, terminator: String = "\n", flush: Bool = true) {
         log(level: .info, item: item, terminator: terminator, flush: flush)
     }
 
-    public func warning(item: Any, terminator: String = "\n", flush: Bool = true) {
+    public func warning(_ item: Any, terminator: String = "\n", flush: Bool = true) {
         log(level: .warning, item: item, terminator: terminator, flush: flush)
     }
 
-    public func error(item: Any, terminator: String = "\n", flush: Bool = true) {
+    public func error(_ item: Any, terminator: String = "\n", flush: Bool = true) {
         log(level: .error, item: item, terminator: terminator, flush: flush)
     }
 
-    public func fatal(item: Any, terminator: String = "\n", flush: Bool = true) {
+    public func fatal(_ item: Any, terminator: String = "\n", flush: Bool = true) {
         log(level: .fatal, item: item, terminator: terminator, flush: flush)
     }
 }
