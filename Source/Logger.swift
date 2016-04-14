@@ -50,7 +50,7 @@ public class Logger {
         let locationInfo = LocationInfo(file: file, line: line, column: column, function: function)
         let event = LoggingEvent(locationInfo: locationInfo, timestamp: currentTime, level: self.levels, name: self.name, logger: self, message: item, error: error)
         for apender in appenders {
-            apender.append(event)
+            apender.append(event: event)
         }
     }
 
@@ -58,32 +58,32 @@ public class Logger {
         let locationInfo = LocationInfo(file: file, line: line, column: column, function: function)
         let event = LoggingEvent(locationInfo: locationInfo, timestamp: currentTime, level: level, name: self.name, logger: self, message: item, error: error)
         for apender in appenders {
-            apender.append(event)
+            apender.append(event: event)
         }
     }
 
     public func trace(item: Any?, error: ErrorProtocol? = nil, file: String = #file, function: String = #function, line: Int = #line, column: Int = #column) {
-        logWithLevel(.trace, item: item, error: error, file: file, function: function, line: line, column: column)
+        logWithLevel(level: .trace, item: item, error: error, file: file, function: function, line: line, column: column)
     }
 
     public func debug(item: Any?, error: ErrorProtocol? = nil, file: String = #file, function: String = #function, line: Int = #line, column: Int = #column) {
-        logWithLevel(.debug, item: item, error: error, file: file, function: function, line: line, column: column)
+        logWithLevel(level: .debug, item: item, error: error, file: file, function: function, line: line, column: column)
     }
 
     public func info(item: Any?, error: ErrorProtocol? = nil, file: String = #file, function: String = #function, line: Int = #line, column: Int = #column) {
-        logWithLevel(.info, item: item, error: error, file: file, function: function, line: line, column: column)
+        logWithLevel(level: .info, item: item, error: error, file: file, function: function, line: line, column: column)
     }
 
     public func warning(item: Any?, error: ErrorProtocol? = nil, file: String = #file, function: String = #function, line: Int = #line, column: Int = #column) {
-        logWithLevel(.warning, item: item, error: error, file: file, function: function, line: line, column: column)
+        logWithLevel(level: .warning, item: item, error: error, file: file, function: function, line: line, column: column)
     }
 
     public func error(item: Any?, error: ErrorProtocol? = nil, file: String = #file, function: String = #function, line: Int = #line, column: Int = #column) {
-        logWithLevel(.error, item: item, error: error, file: file, function: function, line: line, column: column)
+        logWithLevel(level: .error, item: item, error: error, file: file, function: function, line: line, column: column)
     }
 
     public func fatal(item: Any?, error: ErrorProtocol? = nil, file: String = #file, function: String = #function, line: Int = #line, column: Int = #column) {
-        logWithLevel(.fatal, item: item, error: error, file: file, function: function, line: line, column: column)
+        logWithLevel(level: .fatal, item: item, error: error, file: file, function: function, line: line, column: column)
     }
 
     private var currentTime: Int {

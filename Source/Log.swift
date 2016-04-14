@@ -66,26 +66,26 @@ public struct Log {
     }
 
     public func trace(item: Any, terminator: String = "\n", flush: Bool = true) {
-        log(.trace, item: item, terminator: terminator, flush: flush)
+        log(level: .trace, item: item, terminator: terminator, flush: flush)
     }
 
     public func debug(item: Any, terminator: String = "\n", flush: Bool = true) {
-        log(.debug, item: item, terminator: terminator, flush: flush)
+        log(level: .debug, item: item, terminator: terminator, flush: flush)
     }
 
     public func info(item: Any, terminator: String = "\n", flush: Bool = true) {
-        log(.info, item: item, terminator: terminator, flush: flush)
+        log(level: .info, item: item, terminator: terminator, flush: flush)
     }
 
     public func warning(item: Any, terminator: String = "\n", flush: Bool = true) {
-        log(.warning, item: item, terminator: terminator, flush: flush)
+        log(level: .warning, item: item, terminator: terminator, flush: flush)
     }
 
     public func error(item: Any, terminator: String = "\n", flush: Bool = true) {
-        log(.error, item: item, terminator: terminator, flush: flush)
+        log(level: .error, item: item, terminator: terminator, flush: flush)
     }
 
     public func fatal(item: Any, terminator: String = "\n", flush: Bool = true) {
-        log(.fatal, item: item, terminator: terminator, flush: flush)
+        log(level: .fatal, item: item, terminator: terminator, flush: flush)
     }
 }
