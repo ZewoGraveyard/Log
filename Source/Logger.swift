@@ -46,7 +46,7 @@ public class Logger {
         self.name = name
     }
 
-    public func log(item: Any?, error: ErrorProtocol? = nil, file: String = #file, function: String = #function, line: Int = #line, column: Int = #column) {
+    public func log(_ item: Any?, error: ErrorProtocol? = nil, file: String = #file, function: String = #function, line: Int = #line, column: Int = #column) {
         let locationInfo = LocationInfo(file: file, line: line, column: column, function: function)
         let event = LoggingEvent(locationInfo: locationInfo, timestamp: currentTime, level: self.levels, name: self.name, logger: self, message: item, error: error)
         for apender in appenders {
