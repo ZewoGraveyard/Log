@@ -50,7 +50,7 @@ public class Logger {
         let locationInfo = LocationInfo(file: file, line: line, column: column, function: function)
         let event = LoggingEvent(locationInfo: locationInfo, timestamp: currentTime, level: self.levels, name: self.name, logger: self, message: item, error: error)
         for apender in appenders {
-            apender.append(event: event)
+            apender.append(event)
         }
     }
 
@@ -58,7 +58,7 @@ public class Logger {
         let locationInfo = LocationInfo(file: file, line: line, column: column, function: function)
         let event = LoggingEvent(locationInfo: locationInfo, timestamp: currentTime, level: level, name: self.name, logger: self, message: item, error: error)
         for apender in appenders {
-            apender.append(event: event)
+            apender.append(event)
         }
     }
 

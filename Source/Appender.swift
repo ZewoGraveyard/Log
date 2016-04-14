@@ -27,5 +27,5 @@ public protocol Appender {
     var closed: Bool { get }
     var level: Log.Level { get }
 
-    func append (event: LoggingEvent)
+    func append (_ event: LoggingEvent)
 }
