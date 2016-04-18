@@ -22,6 +22,12 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+#if os(Linux)
+    @_exported import Glibc
+#else
+    @_exported import Darwin.C
+#endif
+
 public class Logger {
     //    #namespace     String   The name of the namespace / module
     //    #file          String   The name of the file in which it appears.

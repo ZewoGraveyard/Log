@@ -23,7 +23,6 @@
 // SOFTWARE.
 
 @_exported import C7
-@_exported import OperatingSystem
 
 public struct Log {
     public struct Level: OptionSet {
