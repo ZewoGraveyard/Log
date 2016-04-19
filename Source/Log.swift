@@ -23,7 +23,6 @@
 // SOFTWARE.
 
 @_exported import C7
-@_exported import OperatingSystem
 
 public struct Log {
     public struct Level: OptionSet {
@@ -65,27 +64,27 @@ public struct Log {
         }
     }
 
-    public func trace(item: Any, terminator: String = "\n", flush: Bool = true) {
-        log(.trace, item: item, terminator: terminator, flush: flush)
+    public func trace(_ item: Any, terminator: String = "\n", flush: Bool = true) {
+        log(level: .trace, item: item, terminator: terminator, flush: flush)
     }
 
-    public func debug(item: Any, terminator: String = "\n", flush: Bool = true) {
-        log(.debug, item: item, terminator: terminator, flush: flush)
+    public func debug(_ item: Any, terminator: String = "\n", flush: Bool = true) {
+        log(level: .debug, item: item, terminator: terminator, flush: flush)
     }
 
-    public func info(item: Any, terminator: String = "\n", flush: Bool = true) {
-        log(.info, item: item, terminator: terminator, flush: flush)
+    public func info(_ item: Any, terminator: String = "\n", flush: Bool = true) {
+        log(level: .info, item: item, terminator: terminator, flush: flush)
     }
 
-    public func warning(item: Any, terminator: String = "\n", flush: Bool = true) {
-        log(.warning, item: item, terminator: terminator, flush: flush)
+    public func warning(_ item: Any, terminator: String = "\n", flush: Bool = true) {
+        log(level: .warning, item: item, terminator: terminator, flush: flush)
     }
 
-    public func error(item: Any, terminator: String = "\n", flush: Bool = true) {
-        log(.error, item: item, terminator: terminator, flush: flush)
+    public func error(_ item: Any, terminator: String = "\n", flush: Bool = true) {
+        log(level: .error, item: item, terminator: terminator, flush: flush)
     }
 
-    public func fatal(item: Any, terminator: String = "\n", flush: Bool = true) {
-        log(.fatal, item: item, terminator: terminator, flush: flush)
+    public func fatal(_ item: Any, terminator: String = "\n", flush: Bool = true) {
+        log(level: .fatal, item: item, terminator: terminator, flush: flush)
     }
 }
