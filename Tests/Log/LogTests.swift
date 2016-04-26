@@ -8,7 +8,7 @@ class LogTests: XCTestCase {
 }
 
 extension LogTests {
-    static var allTests : [(String, LogTests -> () throws -> Void)] {
+    static var allTests: [(String, LogTests -> () throws -> Void)] {
         return [
            ("testReality", testReality),
         ]
