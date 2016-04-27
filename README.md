@@ -6,6 +6,7 @@
 [![License][mit-badge]][mit-url]
 [![Slack][slack-badge]][slack-url]
 [![Travis][travis-badge]][travis-url]
+[![Codebeat][codebeat-badge]][codebeat-url]
 
 ## Status
 
@@ -65,3 +66,5 @@ This project is released under the MIT license. See [LICENSE](LICENSE) for detai
 [slack-url]: http://slack.zewo.io
 [travis-badge]: https://travis-ci.org/Zewo/Log.svg?branch=master
 [travis-url]: https://travis-ci.org/Zewo/Log
+[codebeat-badge]: https://codebeat.co/badges/0570c4c3-693f-45fc-813f-0f9bee2774fd
+[codebeat-url]: https://codebeat.co/projects/github-com-zewo-log
