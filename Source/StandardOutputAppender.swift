@@ -1,4 +1,4 @@
-// LoggingEvent.swift
+// Appender.swift
 //
 // The MIT License (MIT)
 //
@@ -22,12 +22,24 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-public struct LoggingEvent {
-    public let locationInfo: LocationInfo
-    public let timestamp: Int
-    public let level: Log.Level
-    public let name: String
-    public let logger: Logger
-    public var message: Any? = nil
-    public var error: ErrorProtocol? = nil
+public struct StandardOutputAppender: Appender {
+    public let name = "Standard Output Appender"
+    public var closed = false
+    public var level = Log.Level.all
+
+    public func append(_ event: LoggingEvent) {
+        var logMessage = ""
+
+        logMessage += "[\(event.timestamp)]"
+        logMessage += "[\(event.locationInfo.description)]"
+
+        if let message = event.message {
+            logMessage += ": \(message)"
+        }
+        if let error = event.error {
+            logMessage += ": \(error)"
+        }
+
+        print(logMessage)
+    }
 }
