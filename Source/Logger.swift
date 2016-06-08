@@ -28,25 +28,21 @@
     @_exported import Darwin.C
 #endif
 
-public class Logger {
-    //    #namespace     String   The name of the namespace / module
-    //    #file          String   The name of the file in which it appears.
-    //    #line          Int      The line number on which it appears.
-    //    #column        Int      The column number in which it begins.
-    //    #function      String   The name of the declaration in which it appears.
-    //    #dsohandle     String   The dso handle.
+public final class Logger {
 
     var appenders = [Appender]()
     var levels: Log.Level
     var name: String
 
-    public init(name: String, appender: Appender, levels: Log.Level = .all) {
-        appenders.append(appender)
+    public init(name: String = "Logger", appender: Appender? = StandardOutputAppender(), levels: Log.Level = .all) {
+        if let appender = appender {
+            self.appenders.append(appender)
+        }
         self.levels = levels
         self.name = name
     }
 
-    public init(name: String, appenders: [Appender], levels: Log.Level = .all) {
+    public init(name: String = "Logger", appenders: [Appender], levels: Log.Level = .all) {
         self.appenders.append(contentsOf: appenders)
         self.levels = levels
         self.name = name
