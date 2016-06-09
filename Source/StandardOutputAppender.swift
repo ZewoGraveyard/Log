@@ -23,9 +23,15 @@
 // SOFTWARE.
 
 public struct StandardOutputAppender: Appender {
-    public let name = "Standard Output Appender"
-    public var closed = false
-    public var level = Log.Level.all
+    public let name: String
+    public var closed: Bool
+    public var level: Log.Level
+
+    init(name: String = "Standard Output Appender", closed: Bool = false, level: Log.Level = .all) {
+        self.name = name
+        self.closed = closed
+        self.level = level
+    }
 
     public func append(_ event: LoggingEvent) {
         var logMessage = ""
