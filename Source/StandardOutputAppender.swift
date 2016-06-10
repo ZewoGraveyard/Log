@@ -27,7 +27,7 @@ public struct StandardOutputAppender: Appender {
     public var closed: Bool
     public var level: Log.Level
 
-    init(name: String = "Standard Output Appender", closed: Bool = false, level: Log.Level = .all) {
+    public init(name: String = "Standard Output Appender", closed: Bool = false, level: Log.Level = .all) {
         self.name = name
         self.closed = closed
         self.level = level
