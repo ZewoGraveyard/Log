@@ -8,7 +8,7 @@ class LogTests: XCTestCase {
 
     func testStandardOutputAppender() {
         let logger = Logger()
-        struct TestError: ErrorProtocol { let description: String }
+        struct TestError: Error { let description: String }
         logger.log("Stuff failed pretty badly", error: TestError(description: "Everything failed badly"))
         // should print out something like
         // [1465345612][/Users/dan/Developer/projects/Zewo/Development/Log/Tests/Log/LogTests.swift:testStandardOutputAppender():12:19]: Stuff failed pretty badly: (TestError #1)(description: "Everything failed badly")
