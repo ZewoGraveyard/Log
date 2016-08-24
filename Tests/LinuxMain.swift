@@ -1,7 +1,7 @@
 #if os(Linux)
 
 import XCTest
-@testable import LogTestSuite
+@testable import LogTests
 
 XCTMain([
     testCase(LogTests.allTests)
